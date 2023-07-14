@@ -21,7 +21,7 @@ def parse_start_script(path=LAUNCHER_DIR):
 def match_name(path_with_names, query):
     fuzzy_re = re.compile(".*".join(query), re.IGNORECASE)
     for path, name in path_with_names:
-        if fuzzy_re.match(name):
+        if fuzzy_re.findall(name):
             yield path, name
 
 
